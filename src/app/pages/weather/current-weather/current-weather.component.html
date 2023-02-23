@@ -5,30 +5,36 @@
   </ion-card-header>
 
   <ion-card-content class="weather-content">
-    <div class="weather-img">
-      <img [src]="getIcon(1000)" alt="" />
+    <div class="weather-time">
+      <div class="weather-img">
+        <img [src]="getIcon(1000)" alt="" />
+      </div>
+      <h1>
+        {{ currentWeather.current.temp_c | number : "1.0-0" }} <sup>°C</sup>
+      </h1>
+      <h2>
+        {{ getCondition(currentWeather.current.condition.code) }}
+      </h2>
     </div>
-    <h1>{{ currentWeather.current.temp_c | number : "1.0-0" }} °C</h1>
-    <h2>
-      {{ getCondition(currentWeather.current.condition.code) }}
-    </h2>
 
     <div class="weather-stats">
       <div class="weather-stat">
         <i class="fa-solid fa-droplet"></i>
         <div class="stat-text">
-          <span>{{ currentWeather.current.humidity | number : "1.0-0" }}%</span>
-          <span>Humedad</span>
+          <span class="stat-value"
+            >{{ currentWeather.current.humidity | number : "1.0-0" }}%</span
+          >
+          <span class="stat-description">Humedad</span>
         </div>
       </div>
 
       <div class="weather-stat">
         <i class="fa-solid fa-wind"></i>
         <div class="stat-text">
-          <span
+          <span class="stat-value"
             >{{ currentWeather.current.wind_kph | number : "1.0-0" }} Km/h</span
           >
-          <span>Viento</span>
+          <span class="stat-description">Viento</span>
         </div>
       </div>
     </div>
