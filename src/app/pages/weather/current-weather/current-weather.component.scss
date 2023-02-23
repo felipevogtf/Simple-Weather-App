@@ -1,0 +1,44 @@
+.weather-card {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-card-buttons {
+  margin-top: auto;
+}
+
+.weather-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+}
+
+.weather-stats {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+
+  .weather-stat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .stat-text {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.weather-img {
+  img {
+    display: block;
+    max-width: 100%;
+    width: 80%;
+    margin: auto;
+  }
+}
