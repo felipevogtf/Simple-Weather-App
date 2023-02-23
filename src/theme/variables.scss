@@ -3,6 +3,15 @@
 
 /** Ionic CSS Variables **/
 :root {
+  --ion-background-color: linear-gradient(
+    to right top,
+    #00b4d8,
+    #1fb9db,
+    #30bfde,
+    #3dc4e1,
+    #48cae4
+  );
+
   /** primary **/
   --ion-color-primary: #eb445a;
   --ion-color-primary-rgb: 235, 68, 90;
@@ -152,7 +161,14 @@ body[color-theme="dark"] {
    */
 
 .ios body[color-theme="dark"] {
-  --ion-background-color: #000000;
+  --ion-background-color: linear-gradient(
+    to right top,
+    #f94144,
+    #f84739,
+    #f54d2d,
+    #f2541f,
+    #ee5b0a
+  );
   --ion-background-color-rgb: 0, 0, 0;
 
   --ion-text-color: #ffffff;

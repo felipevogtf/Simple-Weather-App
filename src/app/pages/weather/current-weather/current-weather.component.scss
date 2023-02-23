@@ -2,10 +2,25 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 
 .weather-card-buttons {
   margin-top: auto;
+}
+
+.weather-location {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+
+  i{
+    font-size: 1rem;
+  }
+
+  span{
+    font-size: 1rem;;
+  }
 }
 
 .weather-content {
@@ -26,6 +41,7 @@
       display: block;
       max-width: 100%;
       width: 70%;
+      min-width: 150px;
       margin: auto;
       padding-bottom: 20px;
     }
@@ -56,6 +72,8 @@
   align-items: center;
   justify-content: space-around;
   width: 100%;
+  flex-wrap: wrap;
+  row-gap: 15px;
 
   .weather-stat {
     display: flex;

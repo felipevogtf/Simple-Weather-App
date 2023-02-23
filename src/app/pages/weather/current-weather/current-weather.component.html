@@ -1,7 +1,10 @@
-<ion-card class="weather-card" mode="ios" *ngIf="currentWeather" color="light">
-  <ion-card-header>
+<ion-card class="weather-card" *ngIf="currentWeather" color="light">
+  <ion-card-header class="weather-location">
     <i class="fa-solid fa-location-pin"></i>
-    {{ currentWeather.location.name }}, {{ currentWeather.location.region }}
+    <span
+      >{{ currentWeather.location.name }},
+      {{ currentWeather.location.region }}</span
+    >
   </ion-card-header>
 
   <ion-card-content class="weather-content">

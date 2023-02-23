@@ -23,7 +23,7 @@ export class CurrentWeatherComponent implements OnInit {
   getWeather(): void {
     this.weatherService.getWeather().subscribe((data) => {
       this.currentWeather = data;
-      let day: string = this.currentWeather.current.is_day ? 'day' : 'dark';
+      let day: string = this.currentWeather.current.is_day ? '' : 'dark';
       document.body.setAttribute('color-theme', day);
     });
   }
