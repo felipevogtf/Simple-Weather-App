@@ -12,7 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot({
+      mode: 'ios',
+    }),
     AppRoutingModule,
     HttpClientModule,
   ],
