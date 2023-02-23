@@ -1,0 +1,8 @@
+{
+  "name": "Simple Weather App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "b31608e6"
+}
