@@ -6,13 +6,13 @@ import { catchError, retry } from 'rxjs/operators';
 import { ErrorService } from './error.service';
 import { Forecast } from '../models/forecast.model';
 import { Position } from '@capacitor/geolocation';
-import { environment } from 'src/environments/environment';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WeatherService {
-  key: string = environment.api_key;
+  key: string = environment.apiKey;
   maxDays: number = 3;
   coords: string = '';
 
