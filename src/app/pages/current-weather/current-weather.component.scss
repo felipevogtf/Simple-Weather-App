@@ -1,8 +1,11 @@
 .weather-card {
-  height: 100vh;
+  min-height: calc(100vh - 48px);
+  width: calc(100% - 32px);
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-self: center;
+  transition: background 1000ms, color 1000ms;
 }
 
 .weather-card-buttons {
@@ -12,14 +15,14 @@
 .weather-location {
   display: flex;
   flex-direction: row;
-  column-gap: 5px;
 
   i{
     font-size: 1rem;
   }
 
   span{
-    font-size: 1rem;;
+    font-size: 1rem;
+    padding-left: 5px;
   }
 }
 
@@ -28,7 +31,6 @@
   flex-direction: column;
   align-items: center;
   margin-top: auto;
-  row-gap: 50px;
 }
 
 .weather-time {
@@ -57,7 +59,7 @@
     font-size: 3rem;
     font-weight: bold;
     sup {
-      font-size: 0.6em;
+      font-size: 2rem;
     }
   }
 
@@ -73,7 +75,7 @@
   justify-content: space-around;
   width: 100%;
   flex-wrap: wrap;
-  row-gap: 15px;
+  margin-top: 50px;
 
   .weather-stat {
     display: flex;
@@ -86,6 +88,7 @@
     display: flex;
     flex-direction: column;
     font-size: 1.1rem;
+    padding-left: 15px;
   }
 
   i {

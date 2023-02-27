@@ -1,0 +1,104 @@
+<ion-card class="weather-card" *ngIf="isLoad && granted" color="light">
+  <ion-card-header class="weather-location">
+    <i class="fa-solid fa-location-pin"></i>
+    <span
+      >{{ currentWeather.location.name }},
+      {{ currentWeather.location.region }}</span
+    >
+  </ion-card-header>
+
+  <ion-card-content class="weather-content">
+    <div class="weather-time">
+      <div class="weather-img">
+        <img [src]="getIcon(currentWeather.current.condition.code)" alt="" />
+      </div>
+      <h1>
+        {{ currentWeather.current.temp_c | number : "1.0-0" }} <sup>°C</sup>
+      </h1>
+      <h2>
+        {{ getCondition(currentWeather.current.condition.code) }}
+      </h2>
+    </div>
+
+    <div class="weather-stats">
+      <div class="weather-stat">
+        <i class="fa-solid fa-droplet"></i>
+        <div class="stat-text">
+          <span class="stat-value"
+            >{{ currentWeather.current.humidity | number : "1.0-0" }}%</span
+          >
+          <span class="stat-description">Humedad</span>
+        </div>
+      </div>
+
+      <div class="weather-stat">
+        <i class="fa-solid fa-wind"></i>
+        <div class="stat-text">
+          <span class="stat-value"
+            >{{ currentWeather.current.wind_kph | number : "1.0-0" }} Km/h</span
+          >
+          <span class="stat-description">Viento</span>
+        </div>
+      </div>
+    </div>
+  </ion-card-content>
+
+  <div class="weather-card-buttons">
+    <ion-button expand="block" fill="clear" (click)="navigate()"
+      >Ver Pronostico</ion-button
+    >
+  </div>
+</ion-card>
+
+<ion-card
+  class="weather-card"
+  *ngIf="!granted || (!isLoad && granted)"
+  color="light"
+>
+  <ion-card-header class="weather-location">
+    <i class="fa-solid fa-location-pin"></i>
+    <span> --- </span>
+  </ion-card-header>
+
+  <ion-card-content class="weather-content">
+    <div class="weather-time">
+      <div class="weather-img">
+        <img [src]="getDefaultIcon()" alt="" />
+      </div>
+      <h1>-- <sup>°C</sup></h1>
+      <h2>--</h2>
+    </div>
+
+    <div class="weather-stats">
+      <div class="weather-stat">
+        <i class="fa-solid fa-droplet"></i>
+        <div class="stat-text">
+          <span class="stat-value">--%</span>
+          <span class="stat-description">Humedad</span>
+        </div>
+      </div>
+
+      <div class="weather-stat">
+        <i class="fa-solid fa-wind"></i>
+        <div class="stat-text">
+          <span class="stat-value">-- Km/h</span>
+          <span class="stat-description">Viento</span>
+        </div>
+      </div>
+    </div>
+  </ion-card-content>
+
+  <div class="weather-card-buttons">
+    <ion-button
+      *ngIf="isLoad && !granted"
+      expand="block"
+      fill="clear"
+      (click)="getWeather()"
+      ><i class="fa-solid fa-rotate-right"></i
+    ></ion-button>
+    <ion-progress-bar
+      type="indeterminate"
+      *ngIf="!isLoad || (!isLoad && granted)"
+    ></ion-progress-bar>
+  </div>
+</ion-card>

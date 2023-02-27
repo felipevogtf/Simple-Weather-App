@@ -1,0 +1,26 @@
+<ion-card class="forecast-card" color="light">
+  <ion-button class="back-button" fill="clear" (click)="navigate()"><i class="fa-solid fa-arrow-left"></i></ion-button>
+
+  <ion-list lines="full">
+    <ion-item color="light" *ngFor="let day of forecast.forecast.forecastday">
+      <ion-label>{{ day.date | date : "cccc" }}</ion-label>
+      <div class="forecast-weather" slot="end">
+        <img
+          [src]="getIcon(day.day.condition.code)"
+          alt=""
+          style="width: 30px"
+        />
+        <span>
+          {{ day.day.mintemp_c | number : "1.0-0" }} /
+          {{ day.day.maxtemp_c | number : "1.0-0" }} <sup>°C</sup>
+        </span>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-progress-bar
+    type="indeterminate"
+    class="forecast-load"
+    *ngIf="!isLoad"
+  ></ion-progress-bar>
+</ion-card>

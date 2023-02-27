@@ -1,4 +1,4 @@
-export interface CurrentWeather {
+export interface Forecast {
   location: {
     name: string;
     region: string;
@@ -17,12 +17,31 @@ export interface CurrentWeather {
       icon: string;
       code: number;
     };
+    wind_mph: number;
     wind_kph: number;
     humidity: number;
   };
+  forecast: {
+    forecastday: ForecastDay[];
+  };
 }
 
-export function emptyCurrentWeather(): CurrentWeather {
+interface ForecastDay {
+  date: string;
+  day: {
+    maxtemp_c: number;
+    mintemp_c: number;
+    avgtemp_c: number;
+    totalsnow_cm: number;
+    condition: {
+      text: string;
+      icon: string;
+      code: number;
+    };
+  };
+}
+
+export function emptyForecast(): Forecast {
   return {
     location: {
       name: '',
@@ -42,8 +61,12 @@ export function emptyCurrentWeather(): CurrentWeather {
         icon: '',
         code: 0,
       },
+      wind_mph: 0,
       wind_kph: 0,
       humidity: 0,
+    },
+    forecast: {
+      forecastday: [],
     },
   };
 }

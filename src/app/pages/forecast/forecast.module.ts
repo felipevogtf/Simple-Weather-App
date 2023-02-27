@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { ForecastComponent } from './forecast.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CurrentWeatherComponent,
+    component: ForecastComponent,
   },
 ];
 
 @NgModule({
-  declarations: [CurrentWeatherComponent],
+  declarations: [ForecastComponent],
   imports: [IonicModule, RouterModule.forChild(routes), CommonModule],
 })
-export class WeatherModule {}
+export class ForecastModule {}

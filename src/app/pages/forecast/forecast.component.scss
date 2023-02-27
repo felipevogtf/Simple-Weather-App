@@ -1,0 +1,32 @@
+.forecast-card {
+  min-height: calc(100vh - 48px);
+  width: calc(100% - 32px);
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.forecast-weather {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+  align-items: center;
+
+  span {
+    padding-top: 5px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    sup {
+      top: -0.2rem;
+    }
+  }
+}
+
+.forecast-load {
+  margin-top: auto;
+}
+
+.back-button {
+  width: fit-content;
+}

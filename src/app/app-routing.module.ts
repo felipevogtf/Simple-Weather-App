@@ -5,7 +5,14 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./pages/weather/weather.module').then((m) => m.WeatherModule),
+      import('./pages/current-weather/current-weather.module').then(
+        (m) => m.CurrentWeatherModule
+      ),
+  },
+  {
+    path: 'forecast',
+    loadChildren: () =>
+      import('./pages/forecast/forecast.module').then((m) => m.ForecastModule),
   },
 ];
 @NgModule({
