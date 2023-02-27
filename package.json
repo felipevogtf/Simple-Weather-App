@@ -26,7 +26,7 @@
     "@capacitor/geolocation": "^4.1.0",
     "@capacitor/haptics": "4.1.0",
     "@capacitor/keyboard": "4.1.1",
-    "@capacitor/status-bar": "4.1.1",
+    "@capacitor/status-bar": "^4.1.1",
     "@ionic/angular": "^6.1.9",
     "cordova-open-native-settings": "^1.5.5",
     "ionicons": "^6.0.3",

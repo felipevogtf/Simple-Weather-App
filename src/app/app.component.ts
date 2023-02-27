@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StatusBar, Style } from '@capacitor/status-bar';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor() {
+    StatusBar.setBackgroundColor({
+      color: '#000000',
+    }).then((data) => console.log(data));
+  }
 
   ngOnInit() {}
 }
