@@ -9,7 +9,7 @@ Una aplicación sencilla realizada en Ionic6, para visualizar el clima en tu ubi
 </div>
 
 </br>
-
+ 
 <div align="center">
 <a href="https://felipevogtf.github.io/Simple-Weather-App/">
 <img alt="Logo" src="https://raw.githubusercontent.com/felipevogtf/Simple-Weather-App/main/resources/demo-light.png" width="700" />
@@ -22,6 +22,19 @@ También cuenta con modo nocturno y se activa dependiendo de si en tu ubicación
 <img alt="Logo" src="https://raw.githubusercontent.com/felipevogtf/Simple-Weather-App/main/resources/demo-dark.png" width="700" />
 </a>
 </div>
+
+## Consideraciones
+
+Agregar la api key de Weatherapi en los archivos `enviroment.ts` y `enviroment.prod.ts`
+
+```
+// src\environments\environment.ts
+
+export const environment = {
+  production: false,
+  apiKey: 'API_KEY_HERE',
+};
+```
 
 ## Instalación
 
